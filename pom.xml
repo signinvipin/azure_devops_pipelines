@@ -69,8 +69,8 @@
 
 <!-- We are not using svn so we can skip version 
     <scm>
-        <connection>scm:svn:http://192.168.33.11:8081/subversion/</connection>
-        <developerConnection>scm:svn:http://192.168.33.11:8081/subversion/</developerConnection>
+        <connection>scm:svn:http://192.168.xx.xx:8081/subversion/</connection>
+        <developerConnection>scm:svn:http://192.168.xx.xx:8081/subversion/</developerConnection>
     </scm>
 -->
 <!-- We are not using nexus artifact repository for release and snapshot, so we can skip this part

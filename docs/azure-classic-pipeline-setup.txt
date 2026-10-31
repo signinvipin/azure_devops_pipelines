@@ -41,11 +41,10 @@ add user to docker group
 sudo usermod -aG docker azureuser
 
 Setup agent on VM
-sudo curl -O 
-sudo -zxvf 
+tar zxvf vsts-agent-linux-arm64-4.261.0.tar.gz
 sudo ./bin/installdependencies.sh
 ./config.sh
-https://dev.azure.com/third8devops
+https://dev.azure.com/thirdxxdevops
 pool name - az-classic-pool
 
 ./run.sh
@@ -85,7 +84,7 @@ Under Agent
 > Add kubectl task
 ##latest tag in app-deployment.yaml is typically used in development/testing for convenience.
   command: apply
-  Arguments: -f app-deployment-dev-test.yaml
+  Arguments: -f k8s/app-deployment-dev-test.yaml
 
 
 For Production, 
@@ -96,7 +95,7 @@ after docker build and push,
 
 > Add bash script/powershell script as,
 
-sed -i "s|image: signinvipin/az-classic-pipeline:.*|image: signinvipin/az-classic-pipeline:$(Build.BuildId)|" app-deployment-prod-classicpipeline.yaml
+sed -i "s|image: signinvipin/az-classic-pipeline:.*|image: signinvipin/az-classic-pipeline:$(Build.BuildId)|" k8s/app-deployment-prod.yaml
 
 ** Learn -
  Templating tools (e.g., Helm) - At scale in production - Used for complex apps or multiple environments
@@ -105,6 +104,7 @@ sed -i "s|image: signinvipin/az-classic-pipeline:.*|image: signinvipin/az-classi
 
 AZURE CICD w/ YAML
 ------------------
+The exported pipeline is in pipelines/azure-pipelines.yml
 
 
 

@@ -27,7 +27,7 @@ jobs:
   - task: Docker@2
     displayName: buildAndPush
     inputs:
-      containerRegistry: 25ce8a14-09f1-49fc-9acd-2b57f43adb26
+      containerRegistry: 25ce8a14-09f1-xxxx-9acd-2b57f43adb26
       # containerRegistry: 'az-classic-docker-conn'
       # aka docker registry service connection ID
       repository: signinvipin/az-classic-pipeline
@@ -35,7 +35,7 @@ jobs:
   - task: Kubernetes@1
     displayName: kubectl rollout
     inputs:
-      kubernetesServiceEndpoint: 7f882865-6733-4121-a27c-03b1321b4898
+      kubernetesServiceEndpoint: 7f882865-6733-xxxx-a27c-03b1321b4898
       # kubernetesServiceEndpoint: 'az-classic-cluster-conn'
       # aka kubernetes service connection ID
       command: rollout
@@ -44,10 +44,10 @@ jobs:
   - task: Kubernetes@1
     displayName: kubectl apply
     inputs:
-      kubernetesServiceEndpoint: 7f882865-6733-4121-a27c-03b1321b4898
+      kubernetesServiceEndpoint: 7f882865-6733-xxxx-a27c-03b1321b4898
       # kubernetesServiceEndpoint: 'az-classic-cluster-conn'
       # aka kubernetes service connection ID
       command: apply
-      arguments: -f app-deployment.yaml
+      arguments: -f k8s/app-deployment-dev-test.yaml
 ...
 
