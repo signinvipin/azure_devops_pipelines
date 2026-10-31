@@ -1,4 +1,4 @@
-# azure-devops-pipelines
+# azure_devops_pipelines
 
 Azure DevOps CI/CD for a Spring Boot (Java 17) app: build with Maven, build and push a Docker image, and deploy to Kubernetes. Built first with the Classic editor, then exported to YAML. This is a lab/learning project.
 
